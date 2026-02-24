@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marhaban Ya Ramadhan</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: gold;
+        }
+
+        .moon {
+            font-size: 80px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+
+        button {
+            background: gold;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: orange;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="moon">🌙</div>
+    <h1>Marhaban Ya Ramadhan</h1>
+    <p>Selamat Menunaikan Ibadah Puasa 1447 H</p>
+</header>
+
+<div class="card">
+    <h2>Apa Itu Ramadhan?</h2>
+    <p>
+        Bulan Ramadhan adalah bulan suci bagi umat Islam.
+        Di bulan ini umat Islam menjalankan ibadah puasa,
+        memperbanyak doa, dan meningkatkan amal ibadah.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Keutamaan Ramadhan</h2>
+    <ul style="list-style:none; padding:0;">
+        <li>✨ Bulan penuh ampunan</li>
+        <li>✨ Pahala dilipatgandakan</li>
+        <li>✨ Terdapat malam Lailatul Qadar</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Ucapan Spesial</h2>
+    <p id="ucapan">Klik tombol di bawah untuk ucapan spesial 🌙</p>
+    <button onclick="tampilkanUcapan()">Klik Disini</button>
+</div>
+
+<footer>
+    © 2026 Website Ramadhan | Dibuat oleh tio
+</footer>
+
+<script>
+function tampilkanUcapan() {
+    document.getElementById("ucapan").innerHTML =
+    "Semoga Ramadhan tahun ini membawa keberkahan, kesehatan, dan kebahagiaan untuk kita semua 🤲✨";
+}
+</script>
+
+</body>
+</html>
