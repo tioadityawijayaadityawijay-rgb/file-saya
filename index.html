@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geprek Juaranya Pedas!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #fdf2e9;
+            color: #333;
+        }
+
+        nav {
+            background-color: #d35400;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Tabel Style */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        /* Form Style */
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Agar padding tidak merusak lebar */
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-wa:hover {
+            background-color: #128C7E;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Ayam Geprek Nampol</h1>
+    </nav>
+
+    <div class="container">
+        
+        <h3>🔥 Pilih Level Pedasmu</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>Nama</th>
+                    <th>Jumlah Cabai</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 3</td>
+                    <td>Sobat Santuy</td>
+                    <td>1 - 5 biji</td>
+                </tr>
+                <tr>
+                    <td>4 - 6</td>
+                    <td>Mulai Keringetan</td>
+                    <td>10 - 15 biji</td>
+                </tr>
+                <tr>
+                    <td>7 - 10</td>
+                    <td>Nangis Bahagia</td>
+                    <td>20+ biji</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <div class="form-container">
+            <h3>🛒 Form Pemesanan</h3>
+            <label>Nama Lengkap:</label>
+            <input type="text" id="nama" placeholder="Contoh: Budi Santoso">
+
+            <label>Pilih Menu:</label>
+            <select id="menu">
+                <option value="Geprek Original">Geprek Original (Rp 15k)</option>
+                <option value="Geprek Mozzarella">Geprek Mozzarella (Rp 25k)</option>
+                <option value="Paket Hemat">Paket Hemat (Rp 20k)</option>
+            </select>
+
+            <label>Level Pedas:</label>
+            <input type="number" id="level" min="1" max="10" value="1">
+
+            <label>Alamat Pengiriman:</label>
+            <textarea id="alamat" rows="3" placeholder="Jl. Merdeka No. 123..."></textarea>
+
+            <button class="btn-wa" onclick="kirimWA()">Kirim via WhatsApp</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ayam Geprek Nampol</p>
+    </footer>
+
+    <script>
+        function kirimWA() {
+            const noWA = "6281234567890"; // GANTI DENGAN NOMOR WA KAMU
+            
+            const nama = document.getElementById('nama').value;
+            const menu = document.getElementById('menu').value;
+            const level = document.getElementById('level').value;
+            const alamat = document.getElementById('alamat').value;
+
+            if (nama == "" || alamat == "") {
+                alert("Harap isi nama dan alamat ya!");
+                return;
+            }
+
+            const pesan = `Halo Ayam Geprek Nampol,%0A%0ASaya mau pesan nih:%0A- *Nama*: ${nama}%0A- *Pesanan*: ${menu}%0A- *Level*: ${level}%0A- *Alamat*: ${alamat}%0A%0ATolong segera diproses ya!`;
+            
+            window.open(`https://wa.me/${noWA}?text=${pesan}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
+
